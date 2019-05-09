@@ -182,43 +182,43 @@
                 var arrMoves = [];              //массив с вариантами ходов
 
                 //проверка положения коня на доске и формирование массива ходов
-                if (k > 2){
-                    if (i > 0){
-                        arrMoves.push(String(i - 1) + String(k - 2) );
-                    }
-                    if (i < 7){
+                if ( (i + 1) < 8){
+                    if ( (k - 2) >= 0){
                         arrMoves.push(String(i + 1) + String(k - 2) );
                     }
-                }
-                if (k > 1){
-                    if (i > 1){
-                        arrMoves.push(String(i - 2) + String(k - 1) );
-                    }
-                    if (i < 6){
-                        arrMoves.push(String(i + 2) + String(k - 1) );
-                    }
-                }  
-                if (k < 8){
-                    if (i < 6){
-                        arrMoves.push(String(i + 2) + String(k + 1) );
-                    }
-                    if (i > 1){
-                        arrMoves.push(String(i - 2) + String(k + 1) );
-                    }
-                }
-                if (k < 7){
-                    if (i < 7){
+                    if ( (k + 2) <8 ){
                         arrMoves.push(String(i + 1) + String(k + 2) );
                     }
-                    if (i > 0){
+                }
+                if ( (i + 2) < 8){
+                    if ( (k - 1) >= 0){
+                        arrMoves.push(String(i + 2) + String(k - 1) );
+                    }
+                    if ( (k + 1) < 8){
+                        arrMoves.push(String(i + 2) + String(k + 1) );
+                    }
+                }  
+                if ( (i - 1) >= 0){
+                    if ( (k - 2) >= 0){
+                        arrMoves.push(String(i - 1) + String(k - 2) );
+                    }
+                    if ( (k + 2) < 8){
                         arrMoves.push(String(i - 1) + String(k + 2) );
+                    }
+                }
+                if ( (i - 2) >= 0){
+                    if ( (k - 1) >= 0){
+                        arrMoves.push(String(i -2) + String(k - 1) );
+                    }
+                    if ( (k + 1) < 8){
+                        arrMoves.push(String(i - 2) + String(k + 1) );
                     }
                 }
                 //конец проверки положения коня на доске
                 return (arrMoves); //возврат массива ходов 
             }
             function touchCell(id){
-                findMoves(id);
+                alert(findMoves(id));
             }
         </script>
     </body>
